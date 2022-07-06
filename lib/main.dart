@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/next_page.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -14,8 +16,34 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan.shade50,
+      backgroundColor: Colors.cyan.shade100,
+      appBar: AppBar(
+        title: const Text(
+          "Climatic Infos",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => NextPage(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              size: 40,
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             Container(
@@ -30,13 +58,13 @@ class HomePage extends StatelessWidget {
                     offset: Offset(3, 7),
                   ),
                 ],
-                color: Colors.white,
+                color: Colors.cyan.shade50,
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.grey.shade50,
-                      Colors.blue,
+                      Colors.grey.shade100,
+                      Colors.lightBlueAccent.shade700,
                     ]),
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -58,13 +86,13 @@ class HomePage extends StatelessWidget {
                   Row(
                     children: [
                       Icon(
-                        Icons.cloudy_snowing,
+                        Icons.sunny,
                         color: Colors.orange.shade500,
                         size: 35,
                       ),
                       const SizedBox(width: 15),
                       const Text(
-                        "Cloudy",
+                        "Sunny",
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
@@ -231,15 +259,15 @@ class HomePage extends StatelessWidget {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children:  [
                           Icon(
                             Icons.light,
-                            color: Colors.white,
+                            color: Colors.cyan.shade50,
                             size: 32,
                           ),
                           Icon(
                             Icons.circle,
-                            color: Colors.white,
+                            color: Colors.cyan.shade50,
                             size: 25,
                           ),
                         ],
@@ -252,11 +280,11 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                             Text(
                               "Lamp",
                               style: TextStyle(
                                 fontSize: 20,
-                                color: Colors.white,
+                                color: Colors.cyan.shade50,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -282,7 +310,7 @@ class HomePage extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.cyan.shade50,
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [
                       BoxShadow(
@@ -304,9 +332,9 @@ class HomePage extends StatelessWidget {
                             color: Colors.blue.shade700,
                             size: 32,
                           ),
-                          Icon(
+                          const Icon(
                             Icons.circle,
-                            color: Colors.red.shade900,
+                            color: Colors.red,
                             size: 25,
                           ),
                         ],
@@ -371,15 +399,15 @@ class HomePage extends StatelessWidget {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children:  [
                           Icon(
                             Icons.air,
-                            color: Colors.white,
+                            color: Colors.cyan.shade50,
                             size: 32,
                           ),
                           Icon(
                             Icons.circle,
-                            color: Colors.white,
+                            color: Colors.cyan.shade50,
                             size: 25,
                           ),
                         ],
@@ -392,11 +420,11 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                             Text(
                               "Air Conditioner",
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.white,
+                                color: Colors.cyan.shade50,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -422,14 +450,14 @@ class HomePage extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.cyan.shade50,
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.blueGrey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 10,
-                        offset: Offset(4, 5),
+                        offset: const Offset(4, 5),
                       )
                     ],
                   ),
@@ -444,9 +472,9 @@ class HomePage extends StatelessWidget {
                             color: Colors.blue.shade700,
                             size: 32,
                           ),
-                          Icon(
+                          const Icon(
                             Icons.circle,
-                            color: Colors.red.shade900,
+                            color: Colors.red,
                             size: 25,
                           ),
                         ],
@@ -485,9 +513,7 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -504,7 +530,7 @@ class HomePage extends StatelessWidget {
                         color: Colors.blueGrey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 10,
-                        offset: Offset(4, 5),
+                        offset: const Offset(4, 5),
                       )
                     ],
                   ),
@@ -513,15 +539,15 @@ class HomePage extends StatelessWidget {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children:  [
                           Icon(
                             Icons.light,
-                            color: Colors.white,
+                            color: Colors.cyan.shade50,
                             size: 32,
                           ),
                           Icon(
                             Icons.circle,
-                            color: Colors.white,
+                            color: Colors.cyan.shade50,
                             size: 25,
                           ),
                         ],
@@ -534,11 +560,11 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                             Text(
                               "Lamp",
                               style: TextStyle(
                                 fontSize: 20,
-                                color: Colors.white,
+                                color: Colors.cyan.shade50,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -564,14 +590,14 @@ class HomePage extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.cyan.shade50,
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.blueGrey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 10,
-                        offset: Offset(4, 5),
+                        offset: const Offset(4, 5),
                       )
                     ],
                   ),
@@ -586,9 +612,9 @@ class HomePage extends StatelessWidget {
                             color: Colors.blue.shade700,
                             size: 32,
                           ),
-                          Icon(
+                          const Icon(
                             Icons.circle,
-                            color: Colors.red.shade900,
+                            color: Colors.red,
                             size: 25,
                           ),
                         ],
@@ -649,10 +675,12 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.circle,
-                        color: Colors.grey,
-                        size: 50,),
+                      children: const [
+                        Icon(
+                          Icons.circle,
+                          color: Colors.grey,
+                          size: 50,
+                        ),
                       ],
                     ),
                   ),
@@ -662,17 +690,17 @@ class HomePage extends StatelessWidget {
                     children: [
                       Row(
                         children: const [
-                          Text("Everyday Life",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),),
+                          Text(
+                            "Everyday Life",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                       Row(
-                        children: [
-                          Text("Coldplay")
-                        ],
+                        children: const [Text("Coldplay")],
                       )
                     ],
                   ),
@@ -684,9 +712,18 @@ class HomePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: const [
-                            Icon(Icons.skip_previous,size: 30,),
-                            Icon(Icons.play_arrow, size: 30,),
-                            Icon(Icons.skip_next,size: 30,),
+                            Icon(
+                              Icons.skip_previous,
+                              size: 30,
+                            ),
+                            Icon(
+                              Icons.play_arrow,
+                              size: 30,
+                            ),
+                            Icon(
+                              Icons.skip_next,
+                              size: 30,
+                            ),
                           ],
                         ),
                       ),
