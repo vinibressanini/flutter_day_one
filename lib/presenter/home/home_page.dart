@@ -9,11 +9,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan.shade100,
       appBar: AppBar(
         title: const Text(
           "Climatic Infos",
-          textAlign: TextAlign.center,
           style: TextStyle(
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
@@ -29,7 +27,7 @@ class HomePage extends StatelessWidget {
               );
             },
             icon: const Icon(
-              Icons.keyboard_arrow_right_sharp,
+              Icons.info_outline,
               size: 40,
             ),
           ),

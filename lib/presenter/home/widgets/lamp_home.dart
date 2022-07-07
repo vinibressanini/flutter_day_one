@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ContainerLampHome extends StatelessWidget {
+  final bool isOpened;
+  final IconData icon;
+  final String title;
+
   const ContainerLampHome({
     Key? key,
+    required this.isOpened,
+    required this.icon,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -12,14 +19,14 @@ class ContainerLampHome extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 18),
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.blue.shade700,
+        color: isOpened ? Colors.blue.shade700 : Colors.white,
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
             color: Colors.blueGrey.withOpacity(0.5),
             spreadRadius: 5,
             blurRadius: 10,
-            offset: Offset(4, 5),
+            offset: const Offset(4, 5),
           )
         ],
       ),
@@ -30,13 +37,13 @@ class ContainerLampHome extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Icon(
-                Icons.light,
-                color: Colors.cyan.shade50,
+                icon,
+                color: isOpened ? Colors.cyan.shade50 : Colors.blue.shade700,
                 size: 32,
               ),
               Icon(
                 Icons.circle,
-                color: Colors.cyan.shade50,
+                color: isOpened ? Colors.white : Colors.red,
                 size: 25,
               ),
             ],
@@ -50,21 +57,25 @@ class ContainerLampHome extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Lamp",
+                  title,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.cyan.shade50,
+                    color: isOpened ? Colors.cyan.shade50 : Colors.black,
                     fontWeight: FontWeight.bold,
+                    
                   ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(
                   height: 15,
                 ),
                 Text(
-                  "OPENED",
+                  isOpened ? 'OPENED' : 'CLOSED',
                   style: TextStyle(
                     fontSize: 17,
-                    color: Colors.grey.shade300,
+                    color: Colors.grey.shade900,
+                    fontWeight: FontWeight.w900
                   ),
                 ),
               ],
@@ -75,4 +86,3 @@ class ContainerLampHome extends StatelessWidget {
     );
   }
 }
-

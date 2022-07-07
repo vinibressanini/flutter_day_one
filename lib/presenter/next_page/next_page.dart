@@ -22,13 +22,22 @@ class NextPage extends StatelessWidget {
                   autoPlayCurve: Curves.linearToEaseOut,
                   scrollDirection: Axis.horizontal,
                   viewportFraction: 0.9,
-                  height: 500
+                  height: 480,
+                  initialPage: 2,
                 ),
-                items: [
-                  CarouselImagesNextPage(),
-                  CarouselImagesNextPage(),
-                  CarouselImagesNextPage(),
-                  CarouselImagesNextPage(),
+                items: const [
+                  CarouselImagesNextPage(
+                    imagem: weather2Img,
+                    text: "Monitoramento Climático",
+                  ),
+                  CarouselImagesNextPage(
+                    imagem: weatherImg,
+                    text: "Se Mantenha Informado!",
+                  ),
+                  CarouselImagesNextPage(
+                    imagem: rainImg,
+                    text: "Sem Mais Problemas!",
+                  ),
                 ]),
           ],
         ));

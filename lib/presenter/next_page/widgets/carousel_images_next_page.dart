@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 import '../../../core/app_assets.dart';
 
 class CarouselImagesNextPage extends StatelessWidget {
+    final String text;
+    final String imagem;
+
   const CarouselImagesNextPage({
     Key? key,
+    required this.text,
+    required this.imagem,
   }) : super(key: key);
 
   @override
@@ -15,10 +20,9 @@ class CarouselImagesNextPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          width: double.maxFinite,
           margin: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          height: 350,
+          height: 250,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             boxShadow: [
@@ -29,18 +33,16 @@ class CarouselImagesNextPage extends StatelessWidget {
                 offset: Offset(3, 4),
               ),
             ],
-            image: const DecorationImage(
-              image: AssetImage(weather2Img),
-              fit: BoxFit.fill
-            ),
+            image:  DecorationImage(
+                image: AssetImage(imagem), fit: BoxFit.fill),
           ),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-             Text(
-              "Monitoramento climático",
-              style: TextStyle(
+          children:  [
+            Text(
+              text,
+              style: const TextStyle(
                 fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.w600,

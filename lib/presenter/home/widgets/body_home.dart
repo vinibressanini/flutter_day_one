@@ -22,12 +22,36 @@ class BodyHome extends StatelessWidget {
           const SizedBox(height: 20),
           Wrap(
             children: const [
-              ContainerLampHome(),
-              ContainerLampHome(),
-              ContainerLampHome(),
-              ContainerLampHome(),
-              ContainerLampHome(),
-              ContainerLampHome(),
+              ContainerLampHome(
+                icon: Icons.light,
+                title: 'Lamp',
+                isOpened: true,
+              ),
+              ContainerLampHome(
+                icon: Icons.computer,
+                title: 'Computer',
+                isOpened: false,
+              ),
+              ContainerLampHome(
+                icon: Icons.timer,
+                title: 'Alarm',
+                isOpened: true,
+              ),
+              ContainerLampHome(
+                icon: Icons.router,
+                title: 'Router',
+                isOpened: false,
+              ),
+              ContainerLampHome(
+                icon: Icons.air,
+                title: 'Air Contidioner',
+                isOpened: false,
+              ),
+              ContainerLampHome(
+                icon: Icons.camera,
+                title: 'Camera',
+                isOpened: true,
+              ),
             ],
           ),
           const ContainerMusicFooter(),
